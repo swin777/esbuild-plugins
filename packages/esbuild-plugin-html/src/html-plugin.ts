@@ -311,9 +311,10 @@ export function htmlPlugin(options: HtmlPluginOptions): Plugin {
 
         const outputs = Object.keys(metafile.outputs).filter(o => {
           const output = metafile.outputs[o];
-          return chunks === 'entry'
-            ? output.entryPoint && entries.includes(path.resolve(basedir, output.entryPoint))
-            : chunks(o, output);
+          return true; //ash modify
+          //return chunks === 'entry'
+          //  ? output.entryPoint && entries.includes(path.resolve(basedir, output.entryPoint))
+          //  : chunks(o, output);
         });
         const cssOutput = outputs.filter(o => o.endsWith('.css'));
         const jsOutput = outputs.filter(o => o.endsWith('.js'));
